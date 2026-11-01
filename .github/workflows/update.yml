@@ -1,0 +1,56 @@
+name: Artikel aktualisieren
+
+on:
+  schedule:
+    - cron: "17 * * * *"     # stündlich: neue Artikel
+    - cron: "41 2 * * 0"     # sonntags: komplettes Archiv neu einlesen
+  workflow_dispatch:
+    inputs:
+      full:
+        description: "Komplettes Archiv neu einlesen"
+        type: boolean
+        default: false
+  push:
+    branches: [main]
+    paths: ["app/**", "scripts/**", ".github/workflows/**"]
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: update
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    timeout-minutes: 50
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Artikel von Surplus holen
+        run: |
+          if [ "${{ inputs.full }}" = "true" ] || [ "${{ github.event.schedule }}" = "41 2 * * 0" ]; then
+            python3 scripts/update.py --full
+          else
+            python3 scripts/update.py
+          fi
+      - name: Änderungen speichern
+        run: |
+          git config user.name "surplus-reader-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add app/data/articles.json
+          git diff --cached --quiet || git commit -m "Artikel aktualisiert" && git push
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: app
+      - id: deploy
+        uses: actions/deploy-pages@v4
