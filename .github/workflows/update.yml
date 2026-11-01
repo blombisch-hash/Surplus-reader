@@ -47,7 +47,13 @@ jobs:
           git config user.name "surplus-reader-bot"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add app/data/articles.json
-          git diff --cached --quiet || git commit -m "Artikel aktualisiert" && git push
+          if ! git diff --cached --quiet; then
+            git commit -m "Artikel aktualisiert"
+            for i in 1 2 3; do
+              git pull --rebase -X theirs origin main && git push && break
+              sleep 5
+            done
+          fi
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:
