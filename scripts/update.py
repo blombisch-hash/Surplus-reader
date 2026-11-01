@@ -122,6 +122,7 @@ class Head(HTMLParser):
         super().__init__()
         self.meta, self.ld, self._in_ld, self._buf, self.title = {}, [], False, [], ""
         self._in_title = False
+        self.h1, self._in_h1, self._h1_done = "", False, False
 
     def handle_starttag(self, tag, attrs):
         a = dict(attrs)
@@ -133,6 +134,8 @@ class Head(HTMLParser):
             self._in_ld, self._buf = True, []
         elif tag == "title":
             self._in_title = True
+        elif tag == "h1" and not self._h1_done:
+            self._in_h1 = True
 
     def handle_endtag(self, tag):
         if tag == "script" and self._in_ld:
@@ -143,12 +146,16 @@ class Head(HTMLParser):
                 pass
         elif tag == "title":
             self._in_title = False
+        elif tag == "h1" and self._in_h1:
+            self._in_h1, self._h1_done = False, True
 
     def handle_data(self, d):
         if self._in_ld:
             self._buf.append(d)
         elif self._in_title:
             self.title += d
+        elif self._in_h1:
+            self.h1 += d
 
 
 def names(x):
@@ -169,7 +176,8 @@ def parse_article(path, page_html):
         pass
     ld = next((x for x in h.ld if isinstance(x, dict) and x.get("@type") in ("Article", "NewsArticle", "BlogPosting")), {})
     m = lambda k: (h.meta.get(k) or [""])[0].strip()
-    title = (ld.get("headline") or m("og:title") or h.title.split(" | ")[0] or "").strip()
+    # Die sichtbare Überschrift (h1) ist der echte Titel; headline/og:title sind teils SEO-Titel.
+    title = (" ".join(h.h1.split()) or ld.get("headline") or m("og:title") or h.title.split(" | ")[0] or "").strip()
     if not title:
         return None
     img = ld.get("image")
@@ -258,9 +266,10 @@ def main():
             if a:
                 old = store.get(pid(p), {})
                 a["id"] = pid(p)
-                for keep in ("s", "c", "h", "r"):
-                    if keep in old:
-                        a[keep] = old[keep]
+                if not full:
+                    for keep in ("s", "c", "h", "r"):
+                        if keep in old:
+                            a[keep] = old[keep]
                 store[a["id"]] = a
             if done % 100 == 0:
                 log(" ", done, "/", len(todo))
@@ -297,6 +306,7 @@ def main():
     # 4) Kolumnen
     idx = fetch(COLUMNS_INDEX) or ""
     col_paths = sorted(set(re.findall(r'href=["\'](?:https?://(?:www\.)?surplusmagazin\.de)?(/kolumne/[^"\'/]+/?)["\']', idx)))
+    per_col = {}
     for cp in col_paths:
         page = fetch(cp) or ""
         h = Head()
@@ -305,16 +315,22 @@ def main():
         except Exception:
             pass
         name = ((h.meta.get("og:title") or [""])[0] or h.title).split(" - ")[0].split(" | ")[0].strip()
-        got = crawl_list(cp, 50 if full else 1)
-        tag(got, "c", html.unescape(name) or cp.strip("/").split("/")[-1])
-        log("Kolumne", name, len(got))
+        per_col[html.unescape(name) or cp.strip("/").split("/")[-1]] = crawl_list(cp, 50 if full else 1)
+    cnt = {}
+    for got in per_col.values():
+        for p in set(got):
+            cnt[p] = cnt.get(p, 0) + 1
+    for name, got in per_col.items():
+        clean = [p for p in got if cnt[p] == 1 or len(per_col) == 1]
+        tag(clean, "c", name)
+        log("Kolumne", name, len(clean))
 
     # 5) Hefte
     mag = fetch(MAGAZIN_INDEX) or ""
     issues = sorted(set(re.findall(r'href=["\'](?:https?://(?:www\.)?surplusmagazin\.de)?/(surplus-(\d+)-[^"\'/]+)/?["\']', mag)),
                     key=lambda t: -int(t[1]))
-    issue_names = {}
-    for slug, num in (issues if full else issues[:2]):
+    issue_names, per_issue = {}, {}
+    for slug, num in (issues if full else issues[:3]):
         page = fetch("/" + slug + "/") or ""
         h = Head()
         try:
@@ -322,9 +338,15 @@ def main():
         except Exception:
             pass
         issue_names[num] = html.unescape(((h.meta.get("og:title") or [""])[0] or h.title).split(" | ")[0].strip())
-        got = links_in(page)
-        tag(got, "h", int(num))
-        log("Heft", num, len(got))
+        per_issue[num] = links_in(page)
+    cnt = {}
+    for got in per_issue.values():
+        for p in set(got):
+            cnt[p] = cnt.get(p, 0) + 1
+    for num, got in per_issue.items():
+        clean = [p for p in got if cnt[p] == 1]   # Links auf mehreren Heftseiten = Seitenleiste
+        tag(clean, "h", int(num))
+        log("Heft", num, len(clean))
 
     # 6) Schreiben
     arts = sorted(store.values(), key=lambda a: a.get("d") or "", reverse=True)

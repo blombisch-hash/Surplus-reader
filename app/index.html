@@ -292,7 +292,7 @@ function issues(){
   const m=new Map(); articles.forEach(a=>{ if(a.h){ const k=String(a.h); if(!m.has(k)) m.set(k,[]); m.get(k).push(a);} });
   return [...m.entries()].sort((a,b)=>Number(b[0])-Number(a[0]));
 }
-function issueName(n){ const s=issueNames[n]||""; return s.replace(/^\s*(Surplus\s*)?#?\s*\d+\s*[–:\-]\s*/i,"").trim(); }
+function issueName(n){ const s=issueNames[n]||""; return s.replace(/^\s*Surplus[\s-]*(Ausgabe|Magazin)?\s*#?\s*\d+\s*[–:\-]?\s*/i,"").replace(/^[»"„]|[«"“]$/g,"").trim(); }
 function issueCard(num, items, compact){
   const done=items.filter(a=>isRead(a.id)).length, pct=items.length?Math.round(done/items.length*100):0;
   return `<div class="issue">
