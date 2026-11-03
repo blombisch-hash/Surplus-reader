@@ -83,6 +83,13 @@ main{max-width:760px;margin:0 auto;padding:6px 16px calc(96px + var(--sb));paddi
 .act.on.save{color:var(--accent)}
 .act.on.done{color:var(--ok)}
 
+.why{margin-top:7px;padding:8px 10px;border-radius:10px;background:var(--accent-soft);font-size:14px;line-height:1.4;color:var(--ink)}
+.why b{color:var(--accent);font-weight:700}
+.picks{margin:16px 0 6px;padding:14px 14px 4px;border-radius:16px;background:var(--card);border:1px solid var(--line)}
+.picks .ph{display:flex;align-items:baseline;justify-content:space-between}
+.picks h2{margin:0;font-family:var(--serif);font-size:22px}
+.picks .ph span{font-size:13px;color:var(--ink3)}
+.picks .card:last-child{border-bottom:0}
 .hero{padding:16px 0 14px;border-bottom:1px solid var(--line)}
 .heroimg{width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:12px;background:var(--ph);margin-bottom:12px}
 .hero .title{font-size:28px;line-height:1.12}
@@ -165,9 +172,9 @@ const BASE = "https://www.surplusmagazin.de/";
 const STORE_KEY = "surplus-reader-state-v1";
 const SECTIONS = [["politik","Politik"],["wirtschaft","Wirtschaft"],["finanzen","Finanzen"],["klima","Klima"],["international","Internationales"],["wissenschaft","Wissenschaft"]];
 const SECLABEL = Object.fromEntries(SECTIONS);
-const VIEWS = {start:"Start",neu:"Neueste",empfehlungen:"Empfehlungen",kolumnen:"Kolumnen",video:"Video & Podcast",heft:"Heft",
+const VIEWS = {start:"Start",fuerdich:"Für dich",neu:"Neueste",empfehlungen:"Empfehlungen",kolumnen:"Kolumnen",video:"Video & Podcast",heft:"Heft",
   merkliste:"Merkliste",verlauf:"Verlauf",suche:"Suche",sicherung:"Sicherung",...SECLABEL};
-const CHIPS = ["start","neu",...SECTIONS.map(s=>s[0]),"kolumnen","video","heft","empfehlungen"];
+const CHIPS = ["start","fuerdich","neu",...SECTIONS.map(s=>s[0]),"kolumnen","video","heft","empfehlungen"];
 const PAGE = 30;
 
 const ICON = {
@@ -182,7 +189,7 @@ const ICON = {
 };
 
 // ---------- Zustand ----------
-let articles = [], byId = new Map(), issueNames = {}, updated = "";
+let articles = [], byId = new Map(), issueNames = {}, updated = "", picks = [];
 let mine = loadState();
 let loaded = false, loadError = false, onlyUnread = false, query = "", shown = PAGE, lastLoad = 0;
 
@@ -206,6 +213,10 @@ async function loadData(){
     issueNames = j.issues||{}; updated = j.updated||"";
     loaded = true; loadError = false; lastLoad = Date.now();
   }catch(e){ loadError = !articles.length; loaded = !!articles.length; }
+  try{
+    const r2 = await fetch("data/picks.json?t="+Date.now(), {cache:"no-store"});
+    if(r2.ok){ const p = await r2.json(); picks = (p.days||[]).filter(d=>d&&d.date&&Array.isArray(d.picks)).sort((a,b)=>a.date<b.date?1:-1); }
+  }catch(_){}
   render();
 }
 function sortNew(list){ return list.slice().sort((x,y)=>{ const dx=x.d||"", dy=y.d||""; return dx===dy?0:(dx<dy?1:-1); }); }
@@ -273,7 +284,7 @@ function card(a, opts={}){
   const showTeaser = opts.teaser!==false && a.x;
   return `<article class="card ${r?"isread":""}">
     <a class="row" href="${href}" target="_blank" rel="noopener" data-open="${id}">
-      <div>${head(a)}<span class="title">${esc(a.t)}</span>${showTeaser?`<div class="teaser">${esc(a.x)}</div>`:""}</div>
+      <div>${head(a)}<span class="title">${esc(a.t)}</span>${showTeaser?`<div class="teaser">${esc(a.x)}</div>`:""}${opts.why?`<div class="why"><b>Warum für dich:</b> ${esc(opts.why)}</div>`:""}</div>
       ${a.i?`<img class="thumb" src="${esc(img(a,300))}" alt="" loading="lazy" decoding="async" data-orig="${esc(a.i)}">`:""}
     </a>
     <div class="foot">${metaLine(a,opts)}${actions(a)}</div>
@@ -303,13 +314,28 @@ function issueCard(num, items, compact){
   </div>`;
 }
 
+function todayKey(){ const d=new Date(); return d.getFullYear()+"-"+String(d.getMonth()+1).padStart(2,"0")+"-"+String(d.getDate()).padStart(2,"0"); }
+function pickCards(day){ return day.picks.map(p=>{ const a=byId.get(p.id); return a?card(a,{teaser:false,why:p.why}):""; }).join(""); }
+function dayTitle(k){ if(k===todayKey()) return "Heute"; const d=new Date(k+"T12:00:00"); const y=new Date(); y.setDate(y.getDate()-1); if(d.toDateString()===y.toDateString()) return "Gestern"; return d.toLocaleDateString("de-DE",{weekday:"long",day:"numeric",month:"long"}); }
+function picksBlock(){
+  const day=picks[0]; if(!day) return "";
+  const age=(new Date(todayKey()+"T12:00:00")-new Date(day.date+"T12:00:00"))/864e5; if(age>2) return "";
+  const done=day.picks.filter(p=>isRead(p.id)).length;
+  return `<section class="picks"><div class="ph"><h2>Für dich ${day.date===todayKey()?"heute":"– "+esc(dayTitle(day.date))}</h2><span>${done}/${day.picks.length} gelesen</span></div>${day.note?`<p class="pagesub" style="margin:4px 0 0">${esc(day.note)}</p>`:""}${pickCards(day)}<button class="more" style="margin:6px 0 12px" data-go="fuerdich">Frühere Empfehlungen</button></section>`;
+}
+function renderFuerDich(){
+  let h=`<h1 class="pagetitle">Für dich</h1><p class="pagesub">Jeden Morgen drei Artikel, von Claude passend zu deinem Interessenprofil ausgesucht.</p>`;
+  if(!picks.length) return h+empty("Noch keine Empfehlungen","Die ersten Vorschläge erscheinen am nächsten Morgen.");
+  for(const day of picks.slice(0,30)){ const c=pickCards(day); if(c) h+=`<div class="day">${esc(dayTitle(day.date))}</div>${day.note?`<p class="pagesub" style="margin:2px 0 0">${esc(day.note)}</p>`:""}`+c; }
+  return h;
+}
 function renderStart(){
   const items=sortNew(articles);
   if(!items.length) return empty("Noch keine Artikel","Die Artikelliste wird gerade erstellt – schau in ein paar Minuten wieder rein.");
   const top=items.slice(0,40);
   const hero=top.find(a=>!isRead(a.id)&&a.i) || items[0];
   const rest=items.filter(a=>a.id!==hero.id).slice(0,7);
-  let h=card(hero,{hero:true,markNew:true}) + list(rest,{markNew:true,teaser:false});
+  let h=picksBlock() + card(hero,{hero:true,markNew:true}) + list(rest,{markNew:true,teaser:false});
   h+=`<button class="more" data-go="neu">Alle neuen Artikel</button>`;
   const saved=articles.filter(a=>isSaved(a.id)&&!isRead(a.id)).sort((x,y)=>(st(y.id).savedAt||0)-(st(x.id).savedAt||0));
   if(saved.length) h+=`<div class="h-sec"><h2>Auf deiner Merkliste</h2><button data-go="merkliste">Alle ${saved.length}</button></div>`+list(saved.slice(0,3),{teaser:false});
@@ -413,7 +439,7 @@ function renderDrawer(v){
   $("#drawer").innerHTML=`
     <div class="dh"><span class="brand">Surplus <i>Reader</i></span><button class="iconbtn" data-close="1" aria-label="Schließen">${ICON.close}</button></div>
     <h3>Meine Artikel</h3>
-    ${mi("merkliste","Merkliste",n?n+" offen":"")}${mi("verlauf","Verlauf")}${mi("suche","Suche")}
+    ${mi("fuerdich","Für dich")}${mi("merkliste","Merkliste",n?n+" offen":"")}${mi("verlauf","Verlauf")}${mi("suche","Suche")}
     <h3>Ressorts</h3>
     ${mi("start","Startseite")}${mi("neu","Neueste Artikel")}
     ${SECTIONS.map(([k,l])=>mi(k,l,cnt(k)?cnt(k)+" ungelesen":"")).join("")}
@@ -430,6 +456,7 @@ function render(){
   if(loadError) h+=`<div class="notice">Die Artikel konnten nicht geladen werden. Prüfe deine Internetverbindung.</div>`;
   if(!loaded && !loadError) h+=`<div class="skel" style="width:100%;height:190px;margin-top:18px;border-radius:12px"></div><div class="skel" style="width:40%"></div><div class="skel" style="width:90%;height:28px"></div><div class="skel"></div>`;
   else if(v==="start") h+=renderStart();
+  else if(v==="fuerdich") h+=renderFuerDich();
   else if(v==="neu") h+=renderListView("Neueste Artikel","Alles von Surplus, neueste zuerst.",articles);
   else if(SECLABEL[v]) h+=renderListView(SECLABEL[v],"",articles.filter(a=>(a.s||[]).includes(v)));
   else if(v==="empfehlungen") h+=renderListView("Auswahl der Redaktion","Empfehlungen von Surplus.",articles.filter(a=>a.r));

@@ -204,7 +204,7 @@ def parse_article(path, page_html):
         a["k"] = "podcast"
     elif a["a"] == "Surplus News":
         a["k"] = "news"
-    elif "wochenbrief" in path or "Wochenbrief" in tags:
+    elif "wochenbrief" in path or "Wochenbrief" in tags or desc.startswith("Die wichtigsten Wirtschaftsfragen der Woche"):
         a["k"] = "wochenbrief"
     return a
 
