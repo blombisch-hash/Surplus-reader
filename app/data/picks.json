@@ -1,1 +1,59 @@
-{"updated": "2026-11-14T07:28Z", "days": [{"date": "2026-11-14", "note": "Geld & Souveränität, Pflegefinanzierung und Märkte gegen Wählerwillen.", "picks": [{"id": "digitaler-euro-us-dollar-banken-zentralbank", "why": "EZB, Stablecoins und Dollar-Abhängigkeit: Warum der digitale Euro ohne eigene Zahlungsinfrastruktur Europa nicht unabhängiger macht – Geldpolitik trifft Geopolitik."}, {"id": "pflegereform-kurzungen-pflegekrise-pflegegeld-spd-cdu", "why": "Was das Pflegeneuordnungsgesetz für Pflegefinanzierung und Pflegeversicherung bedeutet und wer die Kürzungen trägt – zentral für Sozialversicherung und Gesundheitsökonomie."}, {"id": "lula-brasilien-gewonnen-wahl-markte-borse-sparprogramm", "why": "Gegenperspektive zur Marktgläubigkeit: Nach Lulas Wahlsieg fiel die Börse um 13,9 Prozent – wie Finanzmärkte Sparprogramme erzwingen, die Wähler abgelehnt haben."}]}, {"date": "2026-11-03", "note": "Schwerpunkt Finanzmärkte und Pharma – plus eine Gegenposition zum Thema Vermögensaufbau.", "picks": [{"id": "podcast~nachste-schuldenkrise-finanzkrise-frankreich-usa-anleihen-renditen", "why": "Finanzmärkte kompakt als Video: Adam Tooze ordnet steigende Anleiherenditen in Frankreich und den USA ein und was der KI-Boom damit zu tun hat – relevant für jedes Anleihe- und Aktiendepot."}, {"id": "mamdani-forschung-unternehmen-gewinne", "why": "Pharma & Forschung: Wer finanziert Innovation wie bei BioNTech, und wer bekommt die Gewinne? Eine Perspektive auf das Geschäftsmodell der Branche, die man aus Unternehmenssicht selten hört."}, {"id": "fruhstart-kapitalrente-kritik-borse-aktienrente", "why": "Horizont-Erweiterung: Christoph Butterwegge kritisiert Frühstart- und Kapitalrente als Börsen-Booster. Eine bewusste Gegenposition zum eigenen Vermögensaufbau mit Aktien – gut, um die eigenen Argumente zu prüfen."}]}]}
+{
+  "updated": "2026-11-15T05:43:49Z",
+  "days": [
+    {
+      "date": "2026-11-15",
+      "note": "Europas Wachstumsstrategie, wer am digitalen Bezahlen verdient, und eine Grundsatzkritik am Ökonomie-Mainstream.",
+      "picks": [
+        {
+          "id": "europa-wettbewerb-china-usa-ki-wachstum-wirtschaft",
+          "why": "Dani Rodrik skizziert, wie Europa zwischen China und den USA mit eigener Wachstums- und Produktivitätsstrategie bestehen kann – relevant für Industrie- und Standortausblick."
+        },
+        {
+          "id": "digitalisierung-geld-abschaffung-bargeld-wer-profitiert",
+          "why": "Interview mit Soziologin Barbara Brandl: wer an Kartengebühren und Bezahlapps verdient und warum Bargeld als Infrastruktur zählt – passt zur aktuellen Debatte um den digitalen Euro."
+        },
+        {
+          "id": "mainstream-okonomik-neoklassik-keynes-keynesianismus",
+          "why": "Horizont: James K. Galbraith argumentiert, der Mainstream-Ökonomik fehle ein theoretischer Kern, und stellt Keynes und Minsky dagegen – Gegenposition zur Marktgläubigkeit."
+        }
+      ]
+    },
+    {
+      "date": "2026-11-14",
+      "note": "Geld & Souveränität, Pflegefinanzierung und Märkte gegen Wählerwillen.",
+      "picks": [
+        {
+          "id": "digitaler-euro-us-dollar-banken-zentralbank",
+          "why": "EZB, Stablecoins und Dollar-Abhängigkeit: Warum der digitale Euro ohne eigene Zahlungsinfrastruktur Europa nicht unabhängiger macht – Geldpolitik trifft Geopolitik."
+        },
+        {
+          "id": "pflegereform-kurzungen-pflegekrise-pflegegeld-spd-cdu",
+          "why": "Was das Pflegeneuordnungsgesetz für Pflegefinanzierung und Pflegeversicherung bedeutet und wer die Kürzungen trägt – zentral für Sozialversicherung und Gesundheitsökonomie."
+        },
+        {
+          "id": "lula-brasilien-gewonnen-wahl-markte-borse-sparprogramm",
+          "why": "Gegenperspektive zur Marktgläubigkeit: Nach Lulas Wahlsieg fiel die Börse um 13,9 Prozent – wie Finanzmärkte Sparprogramme erzwingen, die Wähler abgelehnt haben."
+        }
+      ]
+    },
+    {
+      "date": "2026-11-03",
+      "note": "Schwerpunkt Finanzmärkte und Pharma – plus eine Gegenposition zum Thema Vermögensaufbau.",
+      "picks": [
+        {
+          "id": "podcast~nachste-schuldenkrise-finanzkrise-frankreich-usa-anleihen-renditen",
+          "why": "Finanzmärkte kompakt als Video: Adam Tooze ordnet steigende Anleiherenditen in Frankreich und den USA ein und was der KI-Boom damit zu tun hat – relevant für jedes Anleihe- und Aktiendepot."
+        },
+        {
+          "id": "mamdani-forschung-unternehmen-gewinne",
+          "why": "Pharma & Forschung: Wer finanziert Innovation wie bei BioNTech, und wer bekommt die Gewinne? Eine Perspektive auf das Geschäftsmodell der Branche, die man aus Unternehmenssicht selten hört."
+        },
+        {
+          "id": "fruhstart-kapitalrente-kritik-borse-aktienrente",
+          "why": "Horizont-Erweiterung: Christoph Butterwegge kritisiert Frühstart- und Kapitalrente als Börsen-Booster. Eine bewusste Gegenposition zum eigenen Vermögensaufbau mit Aktien – gut, um die eigenen Argumente zu prüfen."
+        }
+      ]
+    }
+  ]
+}
