@@ -1,6 +1,24 @@
 {
-  "updated": "2026-11-15T05:43:49Z",
+  "updated": "2026-11-16T05:44:12Z",
   "days": [
+    {
+      "date": "2026-11-16",
+      "note": "Steuern, KI-Rüstungsboom und eine gewerkschaftliche Sicht auf Preise und Löhne",
+      "picks": [
+        {
+          "id": "klingbeils-steuerreform-einkommensteuer-kalte-progression-nicht-ausgeglichen",
+          "why": "Kurze Datenanalyse zur Einkommensteuerreform: Die kalte Progression wird nicht ausgeglichen, bei 40.000 Euro fehlen real rund 190 Euro im Jahr – relevant für die eigene Netto-Planung."
+        },
+        {
+          "id": "ruestung-und-ki-palantir-openai-googlie-pentagon-vertrage",
+          "why": "Wie Pentagon-Verträge Palantir, OpenAI und Google zu Rüstungskonzernen machen – wichtig für die Einordnung von KI-Bewertungen und Tech-Klumpenrisiken im Depot."
+        },
+        {
+          "id": "podcast~antifaschistische-wirtschaftspolitik-buch-weber-fahimi-dgb-video",
+          "why": "Horizont: Isabella Weber und DGB-Chefin Yasmin Fahimi argumentieren für Preiseingriffe und starke Löhne statt Marktvertrauen – eine Gegenposition zur marktliberalen Sicht."
+        }
+      ]
+    },
     {
       "date": "2026-11-15",
       "note": "Europas Wachstumsstrategie, wer am digitalen Bezahlen verdient, und eine Grundsatzkritik am Ökonomie-Mainstream.",
