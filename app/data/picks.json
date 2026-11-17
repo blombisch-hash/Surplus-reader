@@ -1,6 +1,24 @@
 {
-  "updated": "2026-11-16T05:44:12Z",
+  "updated": "2026-11-17T05:43:45Z",
   "days": [
+    {
+      "date": "2026-11-17",
+      "note": "Haushalt 2027 in Zahlen, US-Wirtschaftspolitik nach den Midterms und Vermögensungleichheit im Norden",
+      "picks": [
+        {
+          "id": "bundeshaushalt-2027-kurzungen-frauen-cdu-spd-regierung",
+          "why": "Zerlegt die Kürzungen im Bundeshaushalt 2027 nach Betroffenen: 59 Prozent treffen Frauen. Konkrete Zahlen zu Sozialposten statt Schlagzeilen über Sparvolumen."
+        },
+        {
+          "id": "trump-usa-midterms-wirtschaftspolitik-demokraten-adam-tooze",
+          "why": "Adam Tooze ordnet ein, was ein geschwächter Trump für KI-Investitionen und Welthandel bedeutet – relevant für Marktausblick und Zölle diese Woche."
+        },
+        {
+          "id": "studie-skandinavien-ist-ein-bullerbu-fur-die-reichsten",
+          "why": "Gegenperspektive: Zucmans neue Studie zeigt, dass Superreiche in Schweden und Norwegen kaum Steuern zahlen – stellt das Bild vom nordischen Umverteilungsmodell infrage."
+        }
+      ]
+    },
     {
       "date": "2026-11-16",
       "note": "Steuern, KI-Rüstungsboom und eine gewerkschaftliche Sicht auf Preise und Löhne",
