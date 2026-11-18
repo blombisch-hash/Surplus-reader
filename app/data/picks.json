@@ -1,6 +1,24 @@
 {
-  "updated": "2026-11-17T05:43:45Z",
+  "updated": "2026-11-18T05:44:19Z",
   "days": [
+    {
+      "date": "2026-11-18",
+      "note": "Energiepreise vor dem Winter, Dienstleistungen als Wachstumstreiber und eine Gegenrechnung zur Vergesellschaftung.",
+      "picks": [
+        {
+          "id": "podcast~nachste-gaspreiskrise-iran-krieg-winter-heizen-katherina-reiche-video",
+          "why": "Steigende Börsen-Gaspreise und halbvolle Speicher: Das Video ordnet ein, ob eine neue Gaspreiskrise droht – relevant für Inflation, Industrie und Zinsausblick."
+        },
+        {
+          "id": "wirtschaftswachstum-dienstleistungen-dienstleistungssektor-arbeitsplatze-revolution-arbeit",
+          "why": "Dani Rodrik argumentiert, dass Dienstleistungen die Industrie als Wachstumsmotor ablösen – und fragt, warum Löhne davon kaum profitieren. Wichtig für Produktivität und Arbeitsmarkt."
+        },
+        {
+          "id": "studie-vergesellschaftung-entschadigung-bezahlbar-tom-krebs-patrick-kaczmarczyk",
+          "why": "Gegenposition zur Marktlogik: Eine Studie rechnet vor, dass die Berliner Vergesellschaftung unter 16 Mrd. Euro bleibt und sich aus Mieten finanziert – Zahlen kritisch prüfen."
+        }
+      ]
+    },
     {
       "date": "2026-11-17",
       "note": "Haushalt 2027 in Zahlen, US-Wirtschaftspolitik nach den Midterms und Vermögensungleichheit im Norden",
