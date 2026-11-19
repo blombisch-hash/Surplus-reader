@@ -1,6 +1,24 @@
 {
-  "updated": "2026-11-18T05:44:19Z",
+  "updated": "2026-11-19T05:44:25Z",
   "days": [
+    {
+      "date": "2026-11-19",
+      "note": "Wirtschaftsweisen-Gutachten, Arzneimittelkosten in der GKV und Frankreichs Wirtschaftskurs im Streit",
+      "picks": [
+        {
+          "id": "wirtschaftsweiser-achim-truger-jahresgutachten-wirtschaftsweisen-svr-haushalt",
+          "why": "Ratsmitglied Truger verteidigt das neue Jahresgutachten gegen Kritik – kompakte Einordnung, was der Sachverständigenrat zu Haushalt, Sondervermögen und Konjunktur empfiehlt."
+        },
+        {
+          "id": "pharma-gkv-spargesetz-gesundheit-lobby-industrie",
+          "why": "Analyse, warum das GKV-Spargesetz die Arzneimittelausgaben weitgehend ausspart – passend zur laufenden Debatte über Pflege- und Kassenfinanzierung, mit Blick auf Pharma-Margen und Aktionäre."
+        },
+        {
+          "id": "macrons-wirtschaftspolitik-autoritarer-liberalismus-proteste-frankreich",
+          "why": "Gegenposition: Ökonom Éric Berr zieht eine harte Bilanz von Macrons marktliberaler Reformpolitik und erklärt, warum sie Proteste und politische Polarisierung befeuert hat."
+        }
+      ]
+    },
     {
       "date": "2026-11-18",
       "note": "Energiepreise vor dem Winter, Dienstleistungen als Wachstumstreiber und eine Gegenrechnung zur Vergesellschaftung.",
