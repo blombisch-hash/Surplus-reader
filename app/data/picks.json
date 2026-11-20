@@ -1,6 +1,24 @@
 {
-  "updated": "2026-11-19T05:44:25Z",
+  "updated": "2026-11-20T05:44:29Z",
   "days": [
+    {
+      "date": "2026-11-20",
+      "note": "KI-Börsengang und ETF-Risiken, Energiepreise im Gaswinter, globale Arbeitsstandards",
+      "picks": [
+        {
+          "id": "anthropic-borsengang-ipo-etfs-sparplane-gefahren",
+          "why": "17 Mrd. Dollar Quartalsumsatz gegen fast 900 Mrd. Zahlungszusagen außerhalb der Bilanz: relevant, weil Anthropic bald in breiten ETF-Sparplänen stecken dürfte."
+        },
+        {
+          "id": "der-grosse-hebel-preisdeckel-strom-gas-iberischer-mechanismus",
+          "why": "Passend zur drohenden Gaspreiskrise: wie der in Spanien und Portugal erprobte Iberische Mechanismus Strompreise gedeckelt hat und was er für Inflation bedeutet."
+        },
+        {
+          "id": "internationalen-arbeitsorganisation-ilo-soziale-gerechtigkeit-international",
+          "why": "Blick über den Markt hinaus: Jayati Ghosh zeigt, wie die ILO Arbeitsstandards zwischen Staaten, Arbeitgebern und Gewerkschaften aushandelt."
+        }
+      ]
+    },
     {
       "date": "2026-11-19",
       "note": "Wirtschaftsweisen-Gutachten, Arzneimittelkosten in der GKV und Frankreichs Wirtschaftskurs im Streit",
