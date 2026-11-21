@@ -1,6 +1,24 @@
 {
-  "updated": "2026-11-20T05:44:29Z",
+  "updated": "2026-11-21T05:43:52Z",
   "days": [
+    {
+      "date": "2026-11-21",
+      "note": "Bonität und Arbeitsrecht: neue Regeln für Score und Kündigungsschutz, dazu Geldschöpfung im Klimakontext.",
+      "picks": [
+        {
+          "id": "schufa-score-kritik-verbraucherrechte-bonitat-gerichtsverfahren",
+          "why": "Seit 20. November muss die Schufa ihre Score-Berechnung offenlegen. Der Text erklärt, wie der private Konzern Bonität bewertet und was das für Kredite bedeutet."
+        },
+        {
+          "id": "arbeitsmarktreform-arbeitsrecht-befristung-kuendigungsschutz-unternehmen-beschaeftigte",
+          "why": "Konkreter Überblick, was sich 2027 im Arbeitsrecht ändert: längere Befristungen, weniger Kündigungsschutz, Arbeitszeit – und wem die Reform nützt."
+        },
+        {
+          "id": "cop31-klilmakonferenz-finanzen-klimafinanzierung-geldschopfung",
+          "why": "Horizont: Statt Klimafinanzierung nur über Staatshaushalte zu denken, rückt der Text die Kreditschöpfung der Geschäftsbanken ins Zentrum – ein geldpolitischer Blick auf COP31."
+        }
+      ]
+    },
     {
       "date": "2026-11-20",
       "note": "KI-Börsengang und ETF-Risiken, Energiepreise im Gaswinter, globale Arbeitsstandards",
