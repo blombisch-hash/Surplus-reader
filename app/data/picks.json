@@ -1,6 +1,24 @@
 {
-  "updated": "2026-11-21T05:43:52Z",
+  "updated": "2026-11-22T05:44:18Z",
   "days": [
+    {
+      "date": "2026-11-22",
+      "note": "KI als Wirtschaftsfaktor: Besteuerung, Börsenblase und Geschäftsmodelle ohne Eigentum.",
+      "picks": [
+        {
+          "id": "debatte-ki-steuer-besteuerung-tech-konzerne-wildberger-prien-vorschlag-pro-contra",
+          "why": "Pro und Contra zur KI-Steuer: Sollen Tech-Konzerne mehr zahlen, wenn KI Jobs ersetzt und die Sozialversicherung Beitragszahler verliert? Beide Seiten kompakt gegenübergestellt."
+        },
+        {
+          "id": "podcast~ki-bubble-crash-blase-adamtooze-video",
+          "why": "Adam Tooze erklärt, warum Aktienkurse trotz Krisen steigen und wie fragil der KI-Boom ist – passender Hintergrund zu Nvidia-Zahlen und dem anstehenden Anthropic-Börsengang."
+        },
+        {
+          "id": "gta-vi-gta6-playstation5-teuer-inflation-konsolen-rentenkapitalismus",
+          "why": "Horizont: Am Beispiel GTA VI zeigt der Text, wie Abo- und Mikrotransaktionsmodelle Konsumenten zu Dauerzahlern ohne Eigentum machen – Rentenkapitalismus im Alltag."
+        }
+      ]
+    },
     {
       "date": "2026-11-21",
       "note": "Bonität und Arbeitsrecht: neue Regeln für Score und Kündigungsschutz, dazu Geldschöpfung im Klimakontext.",
