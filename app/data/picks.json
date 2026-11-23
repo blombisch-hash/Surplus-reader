@@ -1,6 +1,24 @@
 {
-  "updated": "2026-11-22T05:44:18Z",
+  "updated": "2026-11-23T05:43:47Z",
   "days": [
+    {
+      "date": "2026-11-23",
+      "note": "Inflation und Währung, Arbeitskosten vs. Dividende, Lehren aus 1929 für heutige Börsenblasen",
+      "picks": [
+        {
+          "id": "turkische-geldpolitik-wahrung-ungleichheit-inflation",
+          "why": "Fallstudie zur türkischen Geldpolitik: wie Lira-Schwäche und Inflation Sparer in Gold treiben und Haushalte ohne Vermögen am härtesten treffen – Notenbankpolitik konkret."
+        },
+        {
+          "id": "vw-nullrunde-35-stunden-woche-tarifverhandlungen-ig-metall",
+          "why": "Kurz und aktuell: VW will Nullrunden und längere Arbeitszeiten, hält aber an der Dividende fest – relevant für die Bewertung von Industrieaktien und Lohnentwicklung."
+        },
+        {
+          "id": "borsencrash-1929-black-tuesday-great-depression",
+          "why": "Gegenperspektive zur Marktgläubigkeit: Der Text verknüpft den Crash von 1929 mit Vermögenskonzentration – ein historischer Prüfstein für die aktuelle Debatte über KI-Blasen."
+        }
+      ]
+    },
     {
       "date": "2026-11-22",
       "note": "KI als Wirtschaftsfaktor: Besteuerung, Börsenblase und Geschäftsmodelle ohne Eigentum.",
