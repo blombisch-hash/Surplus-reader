@@ -1,6 +1,24 @@
 {
-  "updated": "2026-11-23T05:43:47Z",
+  "updated": "2026-11-24T05:44:47Z",
   "days": [
+    {
+      "date": "2026-11-24",
+      "note": "Gaspreise im Winter, Nvidias Chef zwischen KI-Boom und Politik, dazu Care-Arbeit als Wirtschaftsfaktor.",
+      "picks": [
+        {
+          "id": "podcast~gaskrise-winter-heizen-katherina-reiche-energiekrise-video",
+          "why": "Ordnet ein, ob Reaktivierung von Kohle- und Ölkraftwerken eine Gaspreiskrise verhindern kann – relevant für Energiepreise, Inflation und Industrie im Winter."
+        },
+        {
+          "id": "nvidia-ceo-jensen-huang-tech-bro-ki-kunstliche-intelligenz",
+          "why": "Portrait des Mannes hinter dem wichtigsten Chip-Entwickler: Wie Huang politisch tickt, hilft, Risiken der KI-lastigen Indizes und ETFs besser einzuschätzen."
+        },
+        {
+          "id": "silvia-federici-interview-lohn-fur-hausarbeit-wages-for-housework",
+          "why": "Gegenperspektive: Federici erklärt, warum unbezahlte Sorge- und Pflegearbeit Wertschöpfung ist und Pflegeroboter keine Lösung – passend zur Pflegereform-Debatte."
+        }
+      ]
+    },
     {
       "date": "2026-11-23",
       "note": "Inflation und Währung, Arbeitskosten vs. Dividende, Lehren aus 1929 für heutige Börsenblasen",
