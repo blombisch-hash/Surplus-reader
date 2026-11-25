@@ -1,6 +1,24 @@
 {
-  "updated": "2026-11-24T05:44:47Z",
+  "updated": "2026-11-25T05:44:27Z",
   "days": [
+    {
+      "date": "2026-11-25",
+      "note": "Staatsfinanzen im Fokus: Sparkurs in Österreich, US-Anleihemarkt und der Staat als Klima-Akteur.",
+      "picks": [
+        {
+          "id": "osterreich-budgetpolitik-konsolidierung-sparpolitik",
+          "why": "Gleiche Ausgangslage, gegensätzliche Haushaltspolitik: Der Vergleich Österreich–Deutschland zeigt, wie Schuldenregeln und Konsolidierung Konjunktur und Investitionen prägen."
+        },
+        {
+          "id": "us-staatsanleihen-krise-fed-finanzministerium",
+          "why": "Katharina Pistor analysiert die Spannungen am US-Anleihemarkt und die Rolle von Fed und Finanzministerium – relevant für Zinsen, Renditen und Anlagerisiken."
+        },
+        {
+          "id": "cop31-gescheitert-un-verhandlungen-klima-klimaschutz",
+          "why": "Gegenposition zur Marktlogik: Mazzucato argumentiert nach der gescheiterten COP31, dass Klimaschutz handlungsfähige Staaten und öffentliche Beschaffung braucht."
+        }
+      ]
+    },
     {
       "date": "2026-11-24",
       "note": "Gaspreise im Winter, Nvidias Chef zwischen KI-Boom und Politik, dazu Care-Arbeit als Wirtschaftsfaktor.",
