@@ -1,6 +1,24 @@
 {
-  "updated": "2026-11-25T05:44:27Z",
+  "updated": "2026-11-26T05:44:37Z",
   "days": [
+    {
+      "date": "2026-11-26",
+      "note": "Staatsfinanzen unter Druck: EU-Fiskalregeln nach dem Rüstungsboom, Fondsrente à la Schweden und eine Care-Abgabe.",
+      "picks": [
+        {
+          "id": "aufruestung-fiskalregeln-eu-austeritaet-kuerzungen",
+          "why": "Heimberger zeigt, was passiert, wenn die EU-Ausnahmeregel für Verteidigung 2028 ausläuft: höhere Steuern oder Sozialkürzungen – wichtig für Haushalts- und Konjunkturausblick."
+        },
+        {
+          "id": "altersvorsorgedepot-schweden-deutschland-rente-fonds",
+          "why": "Archivstück zur laufenden Rentendebatte: Schwedens Prämienrente als Vorbild für das Altersvorsorgedepot – Kosten, Fondsauswahl und Staatsfonds im Vergleich."
+        },
+        {
+          "id": "feministische-haushaltspolitik-budget-fur-sorgearbeit-steuer-unternehmen",
+          "why": "Gegenposition zur üblichen Haushaltslogik: Pflege und Sorgearbeit als Grundlage aller Produktivität, finanziert über eine Abgabe auf Unternehmensgewinne."
+        }
+      ]
+    },
     {
       "date": "2026-11-25",
       "note": "Staatsfinanzen im Fokus: Sparkurs in Österreich, US-Anleihemarkt und der Staat als Klima-Akteur.",
