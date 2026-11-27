@@ -1,6 +1,24 @@
 {
-  "updated": "2026-11-26T05:44:37Z",
+  "updated": "2026-11-27T05:44:26Z",
   "days": [
+    {
+      "date": "2026-11-27",
+      "note": "Anleihemärkte, Industriepolitik für Dienste und die ökonomischen Kosten von Gewalt",
+      "picks": [
+        {
+          "id": "podcast~staatsanleihen-krise-adamtooze-podcast-video",
+          "why": "Adam Tooze ordnet den weltweiten Renditeanstieg bei Staatsanleihen ein – passender Hintergrund zur aktuellen Debatte um US-Treasuries und Fed."
+        },
+        {
+          "id": "mittelschicht-in-gefahr-industriepolitik-dienstleistungen-dani-rodrik-buch",
+          "why": "Dani Rodrik argumentiert, dass Reindustrialisierung die Mittelschicht nicht rettet, und skizziert eine Industriepolitik für Pflege, Handel und Dienste."
+        },
+        {
+          "id": "tage-gegen-gewalt-an-frauen-frauenhausplatze-kurzungen",
+          "why": "Horizont-Erweiterung: Asha Hedayati zeigt, dass Gewalt gegen Frauen ökonomische Ursachen hat und der Staat vor allem für die Folgekosten statt Prävention zahlt."
+        }
+      ]
+    },
     {
       "date": "2026-11-26",
       "note": "Staatsfinanzen unter Druck: EU-Fiskalregeln nach dem Rüstungsboom, Fondsrente à la Schweden und eine Care-Abgabe.",
