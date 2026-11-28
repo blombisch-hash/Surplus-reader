@@ -1,6 +1,24 @@
 {
-  "updated": "2026-11-27T05:44:26Z",
+  "updated": "2026-11-28T05:44:34Z",
   "days": [
+    {
+      "date": "2026-11-28",
+      "note": "Globale Steuerpolitik, Macht der Tech-Milliardäre und eine Gegenposition zur kapitalgedeckten Rente.",
+      "picks": [
+        {
+          "id": "piketty-un-vereinte-nationen-steuerkonvention-abstimmung-nairobi",
+          "why": "Piketty erklärt, was die in Nairobi verhandelte UN-Steuerkonvention für Konzern- und Milliardärsbesteuerung bedeutet – relevant für die künftige internationale Steuerordnung."
+        },
+        {
+          "id": "jayati-gosh-milliardaere-oligarchie-ki-medien-steuern",
+          "why": "Jayati Ghosh analysiert, wie wenige Milliardäre über KI, Medien und Steuern bestimmen – ein Blick auf Machtkonzentration, die auch Tech-Bewertungen und Regulierung prägt."
+        },
+        {
+          "id": "kapitalrente-okonomischegesetze-mackenroththeorem",
+          "why": "Gegenposition zur Aktienrente: Bontrup argumentiert mit dem Mackenroth-Theorem, dass auch Kapitaldeckung am Ende aus laufender Arbeit bezahlt wird – passend zur Debatte ums Altersvorsorgedepot."
+        }
+      ]
+    },
     {
       "date": "2026-11-27",
       "note": "Anleihemärkte, Industriepolitik für Dienste und die ökonomischen Kosten von Gewalt",
